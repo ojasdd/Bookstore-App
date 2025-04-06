@@ -1,0 +1,12 @@
+<h2>Available Books</h2>
+<ul>
+  {% for book in books %}
+    <li>
+      <strong>{{ book.title }}</strong> by {{ book.author }} - ₹{{ book.price }}
+      <a href="{% url 'add_to_cart' book.id %}">Add to Cart</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'view_cart' %}">View Cart</a>
+<a href="{% url 'logout' %}">Logout</a>
